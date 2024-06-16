@@ -199,7 +199,7 @@
                 <h2>Services Status</h2>
                 {% for service in services %}
                 <div class="service">
-                    <h3>{{ service.service.get_name_display }}</h3>
+                    <h3>{{ service.service.name}}</h3>
                     <p><strong>Customer Description:</strong> {{ service.customer_description }}</p>
                     <p><strong>Current Status:</strong> {{ service.status }}</p>
                     <p><strong>Details:</strong> {{ service.details }}</p>
