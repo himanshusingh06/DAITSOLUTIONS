@@ -12,5 +12,6 @@ urlpatterns = [
     path('admin_dashboard/',views.admin_dashboard, name='admin_dashboard'),
     path('admin_dashboard/user/<int:user_id>/',views.user_services, name='user_services'),
     path('admin_dashboard/service/<int:service_id>/update/',views.update_service_status, name='update_service_status'),
+    path('services',views.services,name='services')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

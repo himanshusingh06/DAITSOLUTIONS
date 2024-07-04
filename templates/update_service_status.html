@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Service Status</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/png" href="{% static 'image/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'image/daitlogon.jpg' %}">
     <style>
         :root {
             --bg-color: #fdfdfd;
@@ -17,7 +17,7 @@
         }
 
         [data-theme="dark"] {
-            --bg-color: #333;
+            --bg-color: #0b061f;
             --text-color: #fdfdfd;
             --main-color: #754ef9;
             --white-color: #444;
@@ -119,25 +119,31 @@
             margin-right: 20px;
         }
     </style>
+
+
 </head>
 <body>
     <div class="header">
-        <h1>Update Service Status for {{ service.service.name }}</h1>
+        <h1>Update Service Status</h1>
     </div>
     </div>
     <div class="nav" id="navbar">
         <div>
-            <a href="{% url 'home' %}"><img src="{% static 'image/daitlogo.png' %}" alt="DAit logo" style="max-width: 30px; height: 30px;margin-left:20px; margin-right: 30px;"></a>
+            <a href="{% url 'home' %}"><img src="{% static 'image/daitlogon.jpg' %}" alt="DAit logo" style="max-width: 30px; height: 30px;margin-left:20px; margin-right: 30px;"></a>
             <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'admin_dashboard' %}">Admin_Dashboard</a>
-            <a href="{% url 'logout' %}">Logout</a>
-        </div>
+            <a href="{% url 'admin_dashboard' %}">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368" style="vertical-align: middle; margin-top: 2px;">
+                    <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/>
+                </svg>
+            </a>
+                    </div>
         <button onclick="toggleTheme()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#754ef9"><path d="M492-280q83 0 141.5-58.5T692-480q0-83-58.5-141.5T492-680q-22 0-43 4.5T408-662q54 25 85.5 74T525-480q0 59-31.5 108T408-298q20 9 41 13.5t43 4.5ZM480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-112 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg></button>
     </div>
     <div class="container">
         <div class="main">
             <form method="post">
                 {% csrf_token %}
+                <h3><label for="service">{{ service.service.name }}</label></h3>
                 <label for="status">Status:</label>
                 <select id="status" name="status" required>
                     <option value="pending" {% if service.status == 'pending' %}selected{% endif %}>Pending</option>

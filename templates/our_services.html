@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'image/daitlogon.jpg' %}">
+    <title>Services</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #333;
+            --main-color: #754ef9;
+            --white-color: #fdfdfd;
+            --shadow-color: rgba(0, 0, 0, .2);
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .headern {
+            background-color: var(--main-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+        
+        .headern h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        main {
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-top: 0.3rem solid var(--main-color);
+            border-bottom: 0.3rem solid var(--main-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            position: relative; /* Make section a containing block */
+        }
+        
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        section h2 {
+            margin-top: 0;
+            color: var(--main-color);
+        }
+        
+        .apply-button {
+            background-color: var(--main-color);
+            color: var(--white-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            transition: background-color 0.3s;
+            align-self: flex-end; /* Align the button to the bottom right */
+            margin-top: 1rem;
+        }
+        
+        .apply-button:hover {
+            background-color: #5939c6;
+        }
+        .nav {
+            background-color: var(--white-color);
+            box-shadow: 0 0 10px var(--shadow-color);
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            transition: top 0.3s;
+            border-top: 5px solid var(--main-color);
+            border-bottom: 5px solid var(--main-color);
+            margin-bottom: 5px;
+        }
+
+        
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .nav button {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+        [data-theme="dark"] {
+            --main-color: #754ef9;
+            --white-color: #100931;
+            --bg-color: #0b061f;
+            --text-color: #fdfdfd;
+            --shadow-color: rgba(0, 0, 0, .7);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav" id="navbar">
+        <div>
+            <a href="{% url 'home' %}"><img src="{% static 'image/daitlogon.jpg' %}" alt="DAit logo" style="max-width: 30px; height: 30px;margin-left:20px; margin-right: 30px;"></a>
+            <a href="{% url 'home' %}">Home</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="text-decoration-none">LOGOUT</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="text-decoration-none">LOGIN</a>
+            {% endif %}
+        </div>
+        <button onclick="toggleTheme()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#754ef9"><path d="M492-280q83 0 141.5-58.5T692-480q0-83-58.5-141.5T492-680q-22 0-43 4.5T408-662q54 25 85.5 74T525-480q0 59-31.5 108T408-298q20 9 41 13.5t43 4.5ZM480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-112 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg></button>
+    </div>
+    <div class="headern">
+        <h1>Our Services</h1>
+    </div>
+    <main>
+        <section id="web-development" style="background-image: url('../static/image/webcover.avif'); background-size: cover; background-repeat: no-repeat; position: relative;">
+            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(47, 45, 45, 0.5);"></div>
+            <div class="section-content" style="position: relative; z-index: 1; padding: 20px;">
+                <div>
+                    <h2>Web Development</h2>
+                    <p style="color: #fdfdfd;">Beautiful and functional websites.</p>
+                    <p style="color: #fdfdfd;">Our web development services focus on creating visually stunning and highly functional websites tailored to your business needs. We combine cutting-edge technology with creative design to ensure your online presence is both engaging and effective. From responsive designs that look great on any device to robust backend systems that support your business operations, we deliver comprehensive web solutions that drive success. Our team of experienced developers and designers work closely with you to bring your vision to life, providing a seamless and enjoyable user experience for your visitors. Whether you need a simple informational site or a complex e-commerce platform, we have the expertise to deliver exceptional results. </p>
+                </div>
+                <a href="{% url 'dashboard' %}" class="apply-button" style="text-decoration: none;">Apply for Services</a>
+            </div>
+        </section>
+        <section id="gst" style="background-image: url('../static/image/gstcover.jpg'); background-size: cover; background-repeat: no-repeat; position: relative;">
+            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+            <div class="section-content" style="position: relative; z-index: 1; padding: 20px;">
+                <div>
+                    <h2>GST</h2>
+                    <p style="color: #fdfdfd;">Engage your audience.</p>
+                    <p style="color: #fdfdfd;">Our GST (Goods and Services Tax) services are designed to help businesses navigate the complexities of tax compliance with ease and efficiency. We provide comprehensive solutions that cover all aspects of GST management, from registration and filing to reporting and audits. Our expert team stays updated with the latest tax regulations to ensure your business remains compliant and avoids any penalties. With our GST services, you can streamline your tax processes, reduce administrative burdens, and focus on what you do best – growing your business. We offer personalized support and guidance to make GST compliance simple and hassle-free. Engage your audience and build trust with transparent and efficient GST practices.</p>
+                </div>
+                <a href="{% url 'dashboard' %}" class="apply-button" style="text-decoration: none;">Apply for Services</a>
+            </div>
+        </section>
+        
+        <section id="backup-support" style="background-image: url('../static/image/backupcover.jpg'); background-size: cover; background-repeat: no-repeat; position: relative;">
+            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(56, 54, 54, 0.5);"></div>
+            <div class="section-content" style="position: relative; z-index: 1; padding: 20px;">
+                <div>
+                    <h2>Backup Support</h2>
+                    <p style="color: #fdfdfd;">Our backup support services ensure that your critical data is securely stored and easily recoverable, providing you with peace of mind. We offer reliable and efficient data backup solutions tailored to your business needs, safeguarding against data loss due to hardware failures, cyber threats, or accidental deletions. Our automated backup processes and secure storage options ensure that your data is always protected and up-to-date. In the event of a data loss, our quick recovery solutions minimize downtime and keep your operations running smoothly. Trust our expert team to provide comprehensive backup support that secures your valuable information and maintains your business continuity.</p>
+                </div>
+                <a href="{% url 'dashboard' %}" class="apply-button" style="text-decoration: none;">Apply for Services</a>
+            </div>
+        </section>
+        
+        <section id="trading" style="background-image: url('../static/image/tradingcover.jpg'); background-size: cover; background-repeat: no-repeat; position: relative;">
+            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+            <div class="section-content" style="position: relative; z-index: 1; padding: 20px;">
+                <div>
+                    <h2>Trading</h2>
+                    <p style="color: #fdfdfd;">Crafting user experiences.</p>
+                    <p style="color: #fdfdfd;">Our trading services are designed to provide exceptional user experiences through innovative and intuitive platforms. We specialize in creating trading environments that are not only functional but also user-friendly and visually appealing. Our solutions cater to both novice and experienced traders, offering powerful tools and features that enhance trading efficiency and decision-making. From real-time data and analytics to secure transaction processes, we ensure that your trading activities are smooth, secure, and effective. Our team is dedicated to developing customized trading platforms that align with your specific needs, helping you stay ahead in the competitive trading landscape. Elevate your trading experience with our expertly crafted solutions.</p>
+                </div>
+                <a href="{% url 'dashboard' %}" class="apply-button" style="text-decoration: none;">Apply for Services</a>
+            </div>
+        </section>
+
+        <section id="seo" style="background-image: url('../static/image/seocover.webp'); background-size: cover; background-repeat: no-repeat; position: relative;">
+            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(52, 49, 49, 0.5);"></div>
+            <div class="section-content" style="position: relative; z-index: 1; padding: 20px;">
+                <div>
+                    <h2>SEO</h2>
+                    <p style="color: #fdfdfd;">Our SEO (Search Engine Optimization) services are designed to enhance your online visibility and drive organic traffic to your website. We employ the latest strategies and best practices to improve your search engine rankings and ensure your business gets noticed by potential customers. Our comprehensive SEO approach includes keyword research, on-page optimization, content creation, link building, and performance tracking. By optimizing your website for search engines, we help you reach a wider audience, increase your brand’s credibility, and boost your online presence. Our team of SEO experts works closely with you to develop a customized plan that aligns with your business goals, ensuring sustainable growth and long-term success. Get found on the web with our professional SEO services.</p>
+                </div>
+                <a href="{% url 'dashboard' %}" class="apply-button" style="text-decoration: none;">Apply for Services</a>
+            </div>
+        </section>
+
+        <section id="calling-support" style="background-image: url('../static/image/callcover.webp'); background-size: cover; background-repeat: no-repeat; position: relative;">
+            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+            <div class="section-content" style="position: relative; z-index: 1; padding: 20px;">
+                <div>
+                    <h2>Calling Support</h2>
+                    <p style="color: #fdfdfd;">Reliable and secure web call center.</p>
+                    <p style="color: #fdfdfd;">Our calling support services provide a reliable and secure web call center solution tailored to meet your customer service needs. We offer a robust platform that ensures clear and uninterrupted communication, enhancing your customer engagement and satisfaction. With advanced features such as call routing, real-time analytics, and seamless integration with your existing systems, our calling support service helps you manage and optimize your call center operations efficiently. Our experienced team ensures that every call is handled professionally, providing your customers with the support they need, when they need it. Enhance your customer service capabilities and build stronger relationships with our top-notch calling support services.</p>
+                </div>
+                <a href="{% url 'dashboard' %}" class="apply-button" style="text-decoration: none;">Apply for Services</a>
+            </div>
+        </section>
+        
+    </main>
+    <script>
+        window.onscroll = function () { toggleStickyNavbar() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function toggleStickyNavbar() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+        }
+    </script>
+</body>
+</html>

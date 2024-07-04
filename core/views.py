@@ -151,3 +151,6 @@ def update_service_status(request, service_id):
         service.save()
         return redirect('user_services', user_id=service.user.id)
     return render(request, 'update_service_status.html', {'service': service})
+
+def services(request):
+    return render(request,'our_services.html')

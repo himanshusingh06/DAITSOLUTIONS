@@ -7,8 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAitsoluions</title>
-    <link rel="icon" type="image/png" href="{% static 'image/favicon.png' %}">
+    <title>datechnologyitsolution</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'image/daitlogon.jpg' %}">
 
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -23,47 +24,49 @@
 <body>
 
     <!-- header design -->
-    <header class="header">
-        <img src="{% static 'image/daitlogo.png' %}" alt="DAit logo" style="max-width: 50px; height: 50px; padding: 10px;">
-        <a href="{% url 'home' %}" class="logo">DAitsolutions.</a>
-        
+    <header class="header" style="position: relative;">
+        <img src="{% static 'image/daitlogon.jpg' %}" alt="DAit logo"
+            style="max-width: 50px; height: 50px; padding: 10px;">
+        <a href="{% url 'home' %}" class="logo">DAtechnology</a>
+
 
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="active text-decoration-none">Home</a>
+            <a href="#about" class="text-decoration-none">About</a>
+            <a href="#services" class="text-decoration-none">Services</a>
+            <a href="#projects" class="text-decoration-none">Projects</a>
+            <a href="#contact" class="text-decoration-none">Contact</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}">LOGOUT</a>
+            <a href="{% url 'logout' %}" class="text-decoration-none">LOGOUT</a>
             {% else %}
-                <a href="{% url 'login' %}">LOGIN</a>
+            <a href="{% url 'login' %}" class="text-decoration-none">LOGIN</a>
             {% endif %}
             {% if request.user.is_staff %}
-            <a href="{% url 'admin_dashboard' %}"><i class='bx bx-user'></i></a>
+            <a href="{% url 'admin_dashboard' %}" class="text-decoration-none"><i class='bx bx-user'></i></a>
             {% else %}
-            <a href="{% url 'dashboard' %}"><i class='bx bx-user'></i></a>
+            <a href="{% url 'dashboard' %}" class="text-decoration-none"><i class='bx bx-user'></i></a>
             {% endif %}
             <!-- <a href="{% url 'dashboard' %}"><i class='bx bx-user'></i></a> -->
         </nav>
 
-        <div class="bx bx-moon" id="darkMode-icon"></div>
+        <div class="bx bx-moon text-decoration-none" id="darkMode-icon"></div>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="bx bx-menu text-decoration-none" id="menu-icon"></div>
     </header>
-
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
             {% if user.is_authenticated %}
-                <span class="logo">welcome {{user.first_name}}</span>
+            <span class="logo">welcome {{user.first_name}}</span>
             {% endif %}
             <h3>Hello, we are</h3>
-            <h1>DAitsolutions</h1><br>
+            <h1>DATECHNOLOGY</h1><br>
             <h3 style="font-size: medium;">Your happiness is our success</h3><br>
-            <p>Enjoy the best value for your money. Our competitive pricing guarantees affordability without compromising on quality. Discover cost-effective solutions tailored to your needs.
+            <p>Enjoy the best value for your money. Our competitive pricing guarantees affordability without
+                compromising on quality. Discover cost-effective solutions tailored to your needs.
             </p>
-            <p>Access round-the-clock support for your peace of mind. Our dedicated team is here 24/7, ready to assist you with any queries or concerns..
+            <p>Access round-the-clock support for your peace of mind. Our dedicated team is here 24/7, ready to assist
+                you with any queries or concerns..
             </p>
 
             <div class="social-media">
@@ -72,6 +75,7 @@
                 <a href="#"><i class='bx bxl-instagram-alt'></i></a>
                 <a href="#"><i class='bx bxl-linkedin'></i></a>
             </div>
+
 
             <!-- <a href="#" class="btn">Download CV</a> -->
         </div>
@@ -95,8 +99,8 @@
                     <h3>Web Designing</h3>
                 </div> -->
                 <div class="profession" style="--i:3;">
-                    <i class='bx bx-server'></i>
-                    <h3>hosting</h3>
+                    <i class='bx bx-dollar'></i>
+                    <h3>trading</h3>
                 </div>
 
                 <div class="circle"></div>
@@ -104,16 +108,20 @@
 
             <div class="overlay"></div>
         </div>
+        <a href="https://wa.me/9739781472" class="whatsapp-link" target="_blank" style="position: fixed; z-index: 100000;left: 2%;bottom: 5%;">
+            <img class="whatsapp-link" src="{% static 'image/whatsapp-icon.webp' %}" alt="whatsapp-chat" width="70px"/>
+        </a>
 
         <!-- <div class="home-img">
             <img src="images/home.png" alt="">
         </div> -->
     </section>
+    
 
     <!-- about section design -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="{% static 'image/about.png' %}" alt="">
+            <img src="{% static 'image/about-us.png' %}" alt="">
         </div>
 
         <div class="about-content">
@@ -125,11 +133,14 @@
                 We Have Years Of Experience In This Field
             </p>
             <p>
-                We're your reliable, professional, and immediate IT partner, offering affordable solutions. Our dedicated team ensures seamless technology integration, prioritizing your satisfaction. Experience excellence with us, where success means your happiness.!
+                We're your reliable, professional, and immediate IT partner, offering affordable solutions. Our
+                dedicated team ensures seamless technology integration, prioritizing your satisfaction. Experience
+                excellence with us, where success means your happiness.!
             </p>
-            <p>Explore cutting-edge technology and services, shaping the future with innovation and unparalleled solutions!
+            <p>Explore cutting-edge technology and services, shaping the future with innovation and unparalleled
+                solutions!
             </p>
-            <a href="#services" class="btn">Read More</a>
+            <!-- <a href="#services" class="btn">Read More</a> -->
         </div>
     </section>
 
@@ -142,37 +153,38 @@
                 <i class='bx bx-code-alt'></i>
                 <h3>Web Development</h3>
                 <p>Beautiful and functional websites.</p>
-                <a href="{% url 'dashboard' %}" class="btn">Read More</a>
+                <a href="{% url 'services' %}" class="btn">Read More</a>
+
             </div>
             <div class="services-box">
-                <i class='bx bxs-paint'></i>
+                <i class='bx bx-data'></i>
                 <h3>Backup Support</h3>
                 <p>Secure and efficient data storage</p>
-                <a href="{% url 'dashboard' %}" class="btn">Read More</a>
+                <a href="{% url 'services' %}" class="btn">Read More</a>
             </div>
             <div class="services-box">
-                <i class='bx bxs-paint'></i>
+                <i class='bx bx-search-alt-2'></i>
                 <h3>SEO</h3>
                 <p>Get found on the web</p>
-                <a href="{% url 'dashboard' %}" class="btn">Read More</a>
+                <a href="{% url 'services' %}" class="btn">Read More</a>
             </div>
             <div class="services-box">
                 <i class='bx bx-bar-chart-alt'></i>
-                <h3>Digital Marketing</h3>
+                <h3>GST</h3>
                 <p>Engage your audience</p>
-                <a href="{% url 'dashboard' %}" class="btn">Read More</a>
+                <a href="{% url 'services' %}" class="btn">Read More</a>
             </div>
             <div class="services-box">
-                <i class='bx bxs-paint'></i>
-                <h3>Web Design</h3>
+                <i class='bx bx-dollar'></i>
+                <h3>Trading</h3>
                 <p>Crafting user experiences</p>
-                <a href="{% url 'dashboard' %}" class="btn">Read More</a>
+                <a href="{% url 'services' %}" class="btn">Read More</a>
             </div>
             <div class="services-box">
-                <i class='bx bxs-paint'></i>
-                <h3>Hosting</h3>
-                <p>Reliable and secure web hosting</p>
-                <a href="{% url 'dashboard' %}" class="btn">Read More</a>
+                <i class='bx bx-phone-call'></i>
+                <h3>Calling Support</h3>
+                <p>Reliable and secure web call center</p>
+                <a href="{% url 'services' %}" class="btn">Read More</a>
             </div>
         </div>
     </section>
@@ -183,57 +195,57 @@
 
         <div class="portfolio-container">
             <div class="portfolio-box">
-                <img src="{% static 'image/portfolio1.jpg' %}" alt="">
+                <img src="{% static 'image/web.jpg' %}" alt="">
 
                 <div class="portfolio-layer">
                     <h4>Web Design</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <!-- <a href="#"><i class='bx bx-link-external'></i></a> -->
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="{% static 'image/portfolio2.jpg' %}" alt="">
+                <img src="{% static 'image/hardware.jpg' %}" alt="">
 
                 <div class="portfolio-layer">
-                    <h4>graphic Design</h4>
+                    <h4>Backend Support</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <!-- <a href="#"><i class='bx bx-link-external'></i></a> -->
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="{% static 'image/portfolio3.jpg' %}" alt="">
+                <img src="{% static 'image/hosting.png' %}" alt="">
 
                 <div class="portfolio-layer">
-                    <h4>Hosting</h4>
+                    <h4>GST</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <!-- <a href="#"><i class='bx bx-link-external'></i></a> -->
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="{% static 'image/portfolio4.jpg' %}" alt="">
+                <img src="{% static 'image/backup.jpg' %}" alt="">
 
                 <div class="portfolio-layer">
                     <h4>Backup</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <!-- <a href="#"><i class='bx bx-link-external'></i></a> -->
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="{% static 'image/portfolio5.jpg' %}" alt="">
+                <img src="{% static 'image/digital-marketing.jpg' %}" alt="">
 
                 <div class="portfolio-layer">
-                    <h4>Digital Marketing</h4>
+                    <h4>Trading</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <!-- <a href="#"><i class='bx bx-link-external'></i></a> -->
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="{% static 'image/portfolio6.jpg' %}" alt="">
+                <img src="{% static 'image/seo.jpg' %}" alt="">
 
                 <div class="portfolio-layer">
                     <h4>SEO</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    <!-- <a href="#"><i class='bx bx-link-external'></i></a> -->
                 </div>
             </div>
         </div>
@@ -249,18 +261,21 @@
                     <div class="testimonial-slide swiper-slide">
                         <img src="{% static 'image/testimonial1.jpg' %}" alt="">
                         <h3>- Sarah T.</h3>
-                        <p>DAitsolutions exceeded my expectations with their innovative solutions. Their team's expertise ensured smooth project execution. Highly recommend their services!</p>
+                        <p>datechnology exceeded my expectations with their innovative solutions. Their team's
+                            expertise ensured smooth project execution. Highly recommend their services!</p>
                     </div>
                     <div class="testimonial-slide swiper-slide">
                         <img src="{% static 'image/testimonial2.jpg' %}" alt="">
                         <h3>- Himanshu S.</h3>
-                        <p>Impressed by DAitsolutions' professionalism and timely delivery. Their tech solutions transformed our business operations, enhancing efficiency. Exceptional service, thank you!
+                        <p>Impressed by datechnology' professionalism and timely delivery. Their tech solutions
+                            transformed our business operations, enhancing efficiency. Exceptional service, thank you!
                         </p>
                     </div>
                     <div class="testimonial-slide swiper-slide">
                         <img src="{% static 'image/testimonial3.jpg' %}" alt="">
                         <h3>- Sathvik V.P</h3>
-                        <p>Choosing DAitsolutions was the best decision for our tech needs. Their attention to detail and dedication resulted in exceptional outcomes. Couldn't be happier with the results!
+                        <p>Choosing datechnology was the best decision for our tech needs. Their attention to detail
+                            and dedication resulted in exceptional outcomes. Couldn't be happier with the results!
                         </p>
                     </div>
                 </div>
@@ -276,10 +291,12 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Us!</span></h2>
         <div class="about-content">
-        <h3 style="text-align: center;">Get in Touch</h3>
-        <p style="text-align: center;">We appreciate your interest in <span>DAitsolutions</span>. Whether you have a question, suggestion, or just want to share your IT or TECH with us, we'd love to hear from you!</p>
+            <h3 style="text-align: center;">Get in Touch</h3>
+            <p style="text-align: center;">We appreciate your interest in <span>datechnology</span>. Whether you have a
+                question, suggestion, or just want to share your IT or TECH with us, we'd love to hear from you!</p>
 
-        <h3 style="text-align: center;">Use the form below to send us a <span>message</span>, and we'll get back to you as soon as possible:</h3>
+            <h3 style="text-align: center;">Use the form below to send us a <span>message</span>, and we'll get back to
+                you as soon as possible:</h3>
         </div>
 
         <form action="submit_contact_form" method="POST">
@@ -296,71 +313,85 @@
             <input type="submit" value="Send Message" class="btn">
         </form>
         <div class="about-content">
-            <p style="text-align: center;">Thank you for reaching out to <span>DAitsolutions</span>. Your well-being is our priority, and we look forward to connecting with you on your <span>QUERIES!</span></p>
+            <p style="text-align: center;">Thank you for reaching out to <span>datechnology</span>. Your well-being is
+                our priority, and we look forward to connecting with you on your <span>QUERIES!</span></p>
         </div>
     </section>
-    
+
 
     <!-- footer design -->
     <div>
-    <footer class="footer">
-        <div class="section__container footer__container">
-          <div class="footer__col">
-            <div class="logo footer__logo">
-              <a href="/"><img src="{% static 'image/daitver.png' %}" alt="DAit logo" /></a>
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <div class="logo footer__logo mb-3">
+                        <a href="/"><img src="{% static 'image/daitlogon.jpg' %}" alt="DAit logo" /></a>
+                    </div>
+                </a>
+                <p class="fs-4">© datechnologyitsolution 2024</p> <!-- Increased text size -->
             </div>
-            <p class="section__description">
-              We're your reliable, professional, and immediate IT partner, offering affordable solutions. Our dedicated team ensures seamless technology integration, prioritizing your satisfaction. Experience excellence with us, where success means your happiness!
-            </p>
-            <ul class="footer__socials">
-              <li>
-                <a href="#"><i class="bx bxl-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bx bxl-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bx bxl-linkedin"></i></a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4>Our Services</h4>
-            <ul class="footer__links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4>Contact Info</h4>
-            <ul class="footer__links">
-              <li>
-                <p>Experience the magic of the latest and innovative tech</p>
-              </li>
-              <li>
-                <p>Address: Udaypura, Bangalore</p>
-              </li>
-              <li>
-                <p>Phone: <a href="tel:+919876543210"><span>+91 9876543210</span></a></p>
-              </li>
-              <li>
-                <p>Email: <a href="mailto:daitsolutions@gmail.com"><span>DAitsolutions@gmail.com</span></a></p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer></div>
-      
+
+            <div class="col mb-3">
+            </div>
+
+            <div class="col mb-3">
+                <h5 class="fs-4">Reach us</h5> <!-- Increased text size -->
+                <ul class="nav flex-column social-media">
+                    <li class="nav-item mb-2"></li><a href="#"><i class='bx bxl-facebook fs-5'></i></a></li>
+                    <li class="nav-item mb-2"></li><a href="#"><i class='bx bxl-twitter fs-5'></i></a></li>
+                    <li class="nav-item mb-2"></li><a href="#"><i class='bx bxl-instagram-alt fs-5'></i></a></li>
+                    <li class="nav-item mb-2"></li><a href="#"><i class='bx bxl-linkedin fs-5'></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-3">
+                <h5 class="fs-4">Navigation</h5> <!-- Increased text size -->
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#home" class="nav-link p-0 fs-5">Home</a></li>
+                    <!-- Increased text size -->
+                    <li class="nav-item mb-2"><a href="#about" class="nav-link p-0 fs-5">About</a></li>
+                    <!-- Increased text size -->
+                    <li class="nav-item mb-2"><a href="#services" class="nav-link p-0 fs-5">Services</a></li>
+                    <!-- Increased text size -->
+                    <li class="nav-item mb-2"><a href="#projects" class="nav-link p-0 fs-5">Project</a></li>
+                    <!-- Increased text size -->
+                    <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0 fs-5">Contact</a></li>
+                    <!-- Increased text size -->
+                </ul>
+            </div>
+
+            <div class="col mb-3">
+                <h5 class="fs-4">Contact-info</h5> <!-- Increased text size -->
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <p class="fs-5">Experience the magic of the latest and innovative tech</p>
+                    </li> <!-- Increased text size -->
+                    <li class="nav-item mb-1">
+                        <p class="fs-5">Address: 21st KM Udaypura Post,</p>
+                    </li> <!-- Increased text size -->
+                    <li class="nav-item mb-2">
+                        <p class="fs-5">bengaluru, karnataka-560082</p>
+                    </li> <!-- Increased text size -->
+                    <li class="nav-item mb-2">
+                        <p class="fs-5">Phone: <a href="tel:+919739781472"><span>+91 9876543210</span></a> | <a
+                                href="tel:+919739781472"><span>+91 7204385837</span></a></p>
+                    </li> <!-- Increased text size -->
+                    <li class="nav-item mb-2">
+                        <p class="fs-6">Email: <a href="mailto:datechnologyitsolution@gmail.com"><span>datechnologyitsolution@gmail.com</span></a>
+                        </p>
+                    </li> <!-- Increased text size -->
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+    
+    
 
 
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

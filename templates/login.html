@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>User Login</title>
-    <link rel="icon" type="image/png" href="{% static 'image/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'image/daitlogon.jpg' %}">
 </head>
 <body style="background-image: url('../static/image/bg.jpg')">
     <div class="glassmorphic-container form">
@@ -72,7 +72,7 @@
                         <label>Password<span class="req">*</span></label>
                         <input type="password" required autocomplete="off" name="pass"/>
                     </div>
-                    <p class="forgot"><a href="#">Forgot Password?</a></p>
+                    <p class="forgot"><a href="{% url 'reset_password' %}">Forgot Password?</a></p>
                     <button class="button button-block">Log In</button>
                 </form>
             </div>

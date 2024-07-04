@@ -143,6 +143,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'himanshusinghwork@outlook.com'
 EMAIL_HOST_PASSWORD = 'Singh@365'
-
-
+DEFAULT_FROM_EMAIL = 'himanshusinghwork@outlook.com'
 ADMIN_EMAILS=['himanshusinghwork365@gmail.com']
